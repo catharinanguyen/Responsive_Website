@@ -1,13 +1,62 @@
 body {
-  background-color: #1c1d21;
+  background-color: #000000;
   color: #ffffff;
   box-sizing: border-box;
 }
 
 .wrapper {
-  width: 1250px;
+  width: 80%;
   max-width: 1250px;
-  margin: 0 auto
+  margin: 0 auto;
+}
+
+section {
+  padding: 108px 0;
+}
+
+.common-title {
+  background: rgb(255, 51, 137);
+  background: linear-gradient(
+    -50deg,
+    rgba(255, 51, 137, 1) 0%,
+    rgba(230, 79, 31, 1) 100%
+  );
+  background: linear-gradient(
+    to right,
+    #ff0000,
+    #9932cc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 7rem;
+  text-shadow: rgba(255, 44, 44, 0.23) -13px 0px 15px,
+    rgba(253, 42, 42, 0.23) 2px 1px 25px, rgba(253, 42, 42, 0.23) 28px 1px 15px,
+    rgba(251, 40, 40, 0.23) 3px 2px 25px;
+}
+
+.introducion {
+  width: 100%;
+}
+
+.about-us p {
+  text-align: center;
+}
+
+.content-top .lg-txt {
+  font-size: 53px;
+  line-height: 62.64px;
+}
+
+.content-top .sm-txt {
+  font-size: 33px;
+  line-height: 6.34px;
+}
+
+.about-us .common-title {
+  font-size: 112px;
 }
 
 .winner-gallery {
@@ -16,15 +65,14 @@ body {
 
 .winner-item {
   width: 30%;
-  margin: 0 1rem;
+  margin: 0 1rem 1rem;
 }
 
 .section-line {
-  
 }
 
 .product-section {
-  column-width: 300px;
+  column-width: 500px;
   column-gap: 5px;
   padding: 5px;
 }
@@ -65,7 +113,6 @@ body {
   transform-style: preserve-3d;
 }
 
-
 /*.lightbox:hover img{
   transform: translate(-50%, -50%) rotateY(180deg);
 }*/
@@ -81,7 +128,7 @@ body {
 }
 
 [class^="arrow"]:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -120,7 +167,7 @@ body {
 
 .close:after,
 .close:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;

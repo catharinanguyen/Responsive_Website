@@ -1,30 +1,19 @@
-// window.addEventListener("load", (event) => {
-//   const imgItem = document.querySelector(".product-item-image");
-//   var box = document.querySelector(".lightbox");
-//   var filter = document.querySelector;
+const options = {
+	keyboard: true,
+	size: 'fullscreen'
+};
 
-//   imgItem.addEventListener("click", () => {
-//     box.toggle("show");
-//     box.append(
-//       "<img src='" +
-//         $(this).attr("src") +
-//         "' alt='" +
-//         $(this).attr("alt") +
-//         "' />"
-//     );
-//   });
-// });
+document.querySelectorAll('.my-lightbox-toggle').forEach((el) => el.addEventListener('click', (e) => {
+	e.preventDefault();
+	const lightbox = new Lightbox(el, options);
+	lightbox.show();
+}));
 
-$(window).load(function () {
-  $("div img").click(function () {
+$(window).load(function() {
+
+  $("section img").click(function() {
     $(".lightbox").fadeIn(300);
-    $(".lightbox").append(
-      "<img src='" +
-        $(this).attr("src") +
-        "' alt='" +
-        $(this).attr("alt") +
-        "' />"
-    );
+    $(".lightbox").append("<img src='" + $(this).attr("src") + "' alt='" + $(this).attr("alt") + "' />");
     $(".filter").css("background-image", "url(" + $(this).attr("src") + ")");
     /*$(".title").append("<h1>" + $(this).attr("alt") + "</h1>");*/
     $("html").css("overflow", "hidden");
@@ -40,14 +29,14 @@ $(window).load(function () {
     }
   });
 
-  $(".close").click(function () {
+  $(".close").click(function() {
     $(".lightbox").fadeOut(300);
     $("h1").remove();
     $(".lightbox img").remove();
     $("html").css("overflow", "auto");
   });
 
-  $(document).keyup(function (e) {
+  $(document).keyup(function(e) {
     if (e.keyCode == 27) {
       $(".lightbox").fadeOut(300);
       $(".lightbox img").remove();
@@ -55,7 +44,7 @@ $(window).load(function () {
     }
   });
 
-  $(".arrowr").click(function () {
+  $(".arrowr").click(function() {
     var imgSrc = $(".lightbox img").attr("src");
     var search = $("section").find("img[src$='" + imgSrc + "']");
     var newImage = search.next().attr("src");
@@ -70,7 +59,7 @@ $(window).load(function () {
     }
   });
 
-  $(".arrowl").click(function () {
+  $(".arrowl").click(function() {
     var imgSrc = $(".lightbox img").attr("src");
     var search = $("section").find("img[src$='" + imgSrc + "']");
     var newImage = search.prev().attr("src");
@@ -84,4 +73,5 @@ $(window).load(function () {
       $(".arrowl").css("display", "none");
     }
   });
+
 });
